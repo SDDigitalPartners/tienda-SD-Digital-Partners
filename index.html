@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AccesesBel Sc | Cuentas de Streaming y Licencias Premium</title>
+    <title>SD Digital Partners | Cuentas de Streaming y Licencias Premium</title>
     <style>
         :root {
-            --bg-principal: #0b0f19;
-            --bg-tarjetas: #151f32;
+            --bg-principal: #0a0a0a;
+            --bg-tarjetas: #141414;
             --texto-blanco: #ffffff;
-            --texto-mutado: #94a3b8;
-            --color-premium: #8b5cf6;
-            --color-gamer: #10b981;
+            --texto-mutado: #a3a3a3;
+            --color-dorado: #d4af37;
+            --color-dorado-brillante: #f3e5ab;
             --color-whatsapp: #25d366;
             --color-telegram: #0088cc;
-            --color-hover: #a78bfa;
+            --color-hover: #e5c158;
+            --border-dorado: rgba(212, 175, 55, 0.25);
             --fuente: 'Arial', sans-serif;
         }
 
@@ -28,14 +29,14 @@
         }
 
         header {
-            background-color: rgba(21, 31, 50, 0.8);
-            backdrop-filter: blur(10px);
+            background-color: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(12px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             padding: 15px 0;
-            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+            border-bottom: 1px solid var(--border-dorado);
         }
 
         .nav-container {
@@ -50,8 +51,9 @@
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
-            color: var(--color-premium);
+            color: var(--color-dorado);
             text-decoration: none;
+            letter-spacing: 0.5px;
         }
 
         .menu {
@@ -68,7 +70,7 @@
         }
 
         .menu a:hover {
-            color: var(--color-premium);
+            color: var(--color-dorado);
         }
 
         .btn-tg-nav {
@@ -87,12 +89,15 @@
         .hero {
             padding: 140px 20px 60px 20px;
             text-align: center;
-            background: radial-gradient(circle at top, rgba(139, 92, 246, 0.15), transparent);
+            background: radial-gradient(circle at top, rgba(212, 175, 55, 0.12), transparent 70%);
         }
 
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 10px;
+            background: linear-gradient(180deg, #ffffff 0%, #e5e5e5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero p {
@@ -103,19 +108,20 @@
         }
 
         .btn-principal {
-            background-color: var(--color-premium);
-            color: var(--texto-blanco);
+            background: linear-gradient(135deg, #d4af37 0%, #aa820a 100%);
+            color: #000000;
             padding: 12px 30px;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
-            transition: background-color 0.3s, transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.3s;
             display: inline-block;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
         }
 
         .btn-principal:hover {
-            background-color: var(--color-hover);
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
         }
 
         .seccion {
@@ -129,6 +135,7 @@
             font-size: 2rem;
             margin-bottom: 30px;
             position: relative;
+            color: var(--texto-blanco);
         }
 
         .seccion-titulo::after {
@@ -136,13 +143,13 @@
             display: block;
             width: 60px;
             height: 3px;
-            background-color: var(--color-premium);
+            background: linear-gradient(90deg, transparent, var(--color-dorado), transparent);
             margin: 10px auto 0 auto;
             border-radius: 2px;
         }
 
         .seccion-titulo.gamer::after {
-            background-color: var(--color-gamer);
+            background: linear-gradient(90deg, transparent, var(--color-dorado-brillante), transparent);
         }
 
         .grid-productos {
@@ -156,8 +163,8 @@
             border-radius: 12px;
             padding: 22px;
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: transform 0.3s, border-color 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -165,11 +172,8 @@
 
         .tarjeta-producto:hover {
             transform: translateY(-5px);
-            border-color: rgba(139, 92, 246, 0.4);
-        }
-
-        .tarjeta-producto.gamer:hover {
-            border-color: rgba(16, 185, 129, 0.4);
+            border-color: var(--color-dorado);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.15);
         }
 
         .producto-logo-img {
@@ -178,13 +182,14 @@
             object-fit: contain;
             margin: 0 auto 15px auto;
             display: block;
-            filter: drop-shadow(0px 2px 8px rgba(0,0,0,0.5));
+            filter: drop-shadow(0px 2px 8px rgba(0,0,0,0.8));
         }
 
         .producto-nombre {
             font-size: 1.25rem;
             margin: 5px 0;
             font-weight: bold;
+            color: var(--texto-blanco);
         }
 
         .producto-detalles {
@@ -196,13 +201,9 @@
 
         .producto-precio {
             font-size: 1.6rem;
-            color: var(--color-premium);
+            color: var(--color-dorado);
             font-weight: bold;
             margin-bottom: 15px;
-        }
-
-        .tarjeta-producto.gamer .producto-precio {
-            color: var(--color-gamer);
         }
 
         /* CONTENEDOR DE DOS BOTONES */
@@ -222,10 +223,10 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 0.85rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             color: #ffffff;
-            transition: background-color 0.3s, transform 0.2s;
-            background-color: rgba(255, 255, 255, 0.02);
+            transition: background-color 0.3s, transform 0.2s, border-color 0.3s;
+            background-color: rgba(255, 255, 255, 0.03);
         }
 
         .btn-accion svg {
@@ -247,17 +248,19 @@
         }
 
         .banner-aliado {
-            background: linear-gradient(135deg, #1e1b4b, #064e3b);
+            background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
             border-radius: 16px;
             padding: 40px;
             text-align: center;
             margin-top: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--border-dorado);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         .banner-aliado h3 {
             font-size: 1.8rem;
             margin-bottom: 10px;
+            color: var(--color-dorado);
         }
 
         .banner-aliado p {
@@ -268,32 +271,37 @@
 
         .codigo-cupon {
             display: inline-block;
-            background-color: rgba(0, 0, 0, 0.3);
-            border: 2px dashed var(--color-gamer);
+            background-color: rgba(0, 0, 0, 0.6);
+            border: 2px dashed var(--color-dorado);
             padding: 10px 20px;
             font-size: 1.3rem;
             font-weight: bold;
             letter-spacing: 2px;
-            color: var(--color-gamer);
+            color: var(--color-dorado-brillante);
             border-radius: 6px;
             margin-bottom: 20px;
         }
 
         .seccion-pagos {
             text-align: center;
-            background-color: rgba(21, 31, 50, 0.4);
+            background-color: var(--bg-tarjetas);
             padding: 30px;
             border-radius: 12px;
             margin-top: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-dorado);
+        }
+
+        .seccion-pagos h3 {
+            color: var(--color-dorado);
+            margin-top: 0;
         }
 
         footer {
-            background-color: #070a10;
+            background-color: #050505;
             padding: 40px 20px;
             text-align: center;
             color: var(--texto-mutado);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
         }
 
         .telegram-link {
@@ -312,7 +320,7 @@
 
     <header>
         <div class="nav-container">
-            <a href="#" class="logo">AccesesBel Sc</a>
+            <a href="#" class="logo">SD Digital Partners</a>
             <div class="menu">
                 <a href="#series">Cine & TV</a>
                 <a href="#musica">Música</a>
@@ -536,7 +544,7 @@
         <div class="grid-productos">
             <div class="tarjeta-producto">
                 <div>
-                    <div style="font-size: 2.2rem; font-weight: bold; color: #ef4444; margin-bottom: 15px; font-family: sans-serif; letter-spacing: -1px;">TeleLatino</div>
+                    <div style="font-size: 2.2rem; font-weight: bold; color: var(--color-dorado); margin-bottom: 15px; font-family: sans-serif; letter-spacing: -1px;">TeleLatino</div>
                     <h3 class="producto-nombre">Tele Latino</h3>
                     <p class="producto-detalles">Canales premium latinos, películas y series estables.</p>
                 </div>
@@ -550,7 +558,7 @@
             </div>
             <div class="tarjeta-producto">
                 <div>
-                    <div style="font-size: 2.2rem; font-weight: bold; color: #10b981; margin-bottom: 15px; font-family: sans-serif;">FlujoTV</div>
+                    <div style="font-size: 2.2rem; font-weight: bold; color: var(--color-dorado-brillante); margin-bottom: 15px; font-family: sans-serif;">FlujoTV</div>
                     <h3 class="producto-nombre">Flujo TV</h3>
                     <p class="producto-detalles">Excelente servicio de IPTV con canales estables en calidad HD.</p>
                 </div>
@@ -815,7 +823,7 @@
             <p>Visita a nuestros aliados de <strong>Makertechv</strong> y usa nuestro código exclusivo para obtener beneficios y descuentos:</p>
             <div class="codigo-cupon">SAMCRD</div>
             <div style="margin-top: 20px;">
-                <a href="https://www.instagram.com/makertechv" target="_blank" class="btn-principal" style="background-color: var(--color-gamer);">Visitar Tienda</a>
+                <a href="https://www.instagram.com/makertechv" target="_blank" class="btn-principal">Visitar Tienda</a>
             </div>
         </div>
     </section>
@@ -830,9 +838,9 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 AccesesBel Sc. Todos los derechos reservados.</p>
+        <p>&copy; 2026 SD Digital Partners. Todos los derechos reservados.</p>
         <p>Escríbenos también por Telegram: <a href="https://t.me/AccesesBelss" target="_blank" class="telegram-link">@AccesesBelss</a></p>
-        <p style="font-size: 0.8rem; margin-top: 15px; color: rgba(255,255,255,0.2);">Diseñado con pasión para creadores y gamers.</p>
+        <p style="font-size: 0.8rem; margin-top: 15px; color: rgba(255,255,255,0.25);">Diseñado con pasión para creadores y gamers.</p>
     </footer>
 
 </body>
